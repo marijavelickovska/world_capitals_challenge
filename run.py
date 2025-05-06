@@ -3,9 +3,11 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
 import dataQuiz
+from pprint import pprint
 
 quiz_questions = dataQuiz.quiz_questions
-#print(quiz_questions)
+#pprint(quiz_questions)
+
 
 def show_welcome():
     print("="*40)
@@ -13,13 +15,11 @@ def show_welcome():
     print("="*40)
 
 
-
 def show_introduction():
     print("\n--- Introduction ---")
     print("\nThis is a quiz where you will be asked about the capital cities of various countries.")
     print("Try to answer as many questions correctly as you can!\n")
     back_to_main_menu()
-
 
 
 def show_how_to_play():
@@ -32,20 +32,11 @@ def show_how_to_play():
     back_to_main_menu()
 
 
-
 def start_quiz():
     print("\nStarting the quiz...\n")
 
 
-def back_to_main_menu():
-    back = input("If you want to go back to the main menu, enter 'yes'\n")
-
-    if back == "yes":
-        main_menu()
-
-
-    
-def validate_input(choice): 
+def validate_choice_input(choice): 
     if not choice.isdigit():
         print("Invalid input: You must enter a number between 1 and 4.\n")
         return False
@@ -58,7 +49,30 @@ def validate_input(choice):
         return False
 
     return True
-    
+
+
+#def validate_back_input():
+   
+
+
+def back_to_main_menu():
+    back = input("If you want to go back to the main menu, enter 'yes'\n")
+
+    if back == "yes":
+        main_menu()
+
+
+def show_quiz():
+     for question in quiz_questions:
+        print(question["question"])
+        print()
+        for letter, answer in question["answers"].items():
+            print(f"{letter}. {answer}")
+        print()   
+        user_answer = input("Your answer (A, B, C or D): ").strip().upper()
+     
+
+show_quiz()
 
 
 def main_menu():
@@ -72,7 +86,7 @@ def main_menu():
 
         choice = input("Enter your choice (1-4): \n")
 
-        if validate_input(choice):
+        if validate_choice_input(choice):
             if choice == "1":
                 show_introduction()
             elif choice == "2":
@@ -86,4 +100,4 @@ def main_menu():
                 print("Invalid choice. Please enter a number from 1 to 4.\n")
 
 
-main_menu()
+#main_menu()
