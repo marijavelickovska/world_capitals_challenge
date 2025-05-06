@@ -16,8 +16,9 @@ def show_welcome():
 
 def show_introduction():
     print("\n--- Introduction ---")
-    print("This is a quiz where you will be asked about the capital cities of various countries.")
+    print("\nThis is a quiz where you will be asked about the capital cities of various countries.")
     print("Try to answer as many questions correctly as you can!\n")
+    back_to_main_menu()
 
 
 
@@ -28,6 +29,7 @@ def show_how_to_play():
     print("3. Type the letter (A, B, C, or D) that corresponds to the correct capital and press Enter.")
     print("4. You will receive feedback after each question.")
     print("5. At the end, you'll see your final score.\n")
+    back_to_main_menu()
 
 
 
@@ -36,10 +38,22 @@ def start_quiz():
 
 
 def back_to_main_menu():
-    back = input("If you want to go back to the main menu, enter 'yes'")
+    back = input("If you want to go back to the main menu, enter 'yes'\n")
 
     if back == "yes":
         main_menu()
+
+
+    
+def validate_input(choice): 
+    try:
+        if int(choice) not in range(1,5):
+            raise ValueError("You need to enter a number from 1 to 4")
+    except ValueError as e:
+        print(f"Invalid data: {e}, please try again.\n")
+        return False
+
+    return True
     
 
 
@@ -52,25 +66,20 @@ def main_menu():
         print("3. Start Quiz")
         print("4. Exit\n")
 
-        choice = input("Enter your choice (1-4): ")
+        choice = input("Enter your choice (1-4): \n")
 
-        if choice == "1":
-            show_introduction()
-            back_to_main_menu()
-        elif choice == "2":
-            show_how_to_play()
-            back_to_main_menu()
-        elif choice == "3":
-            start_quiz()
-        elif choice == "4":
-            print("Goodbye!")
-            break
-        else:
-            print("Invalid choice. Please enter a number from 1 to 4.\n")
-
+        if validate_input(choice):
+            if choice == "1":
+                show_introduction()
+            elif choice == "2":
+                show_how_to_play()
+            elif choice == "3":
+                start_quiz()
+            elif choice == "4":
+                print("Goodbye!")
+                return False
+            else:
+                print("Invalid choice. Please enter a number from 1 to 4.\n")
 
 
 main_menu()
-show_welcome()
-show_introduction()
-show_how_to_play()
