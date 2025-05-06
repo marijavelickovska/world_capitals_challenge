@@ -14,7 +14,6 @@ def show_welcome():
 
 
 
-
 def show_introduction():
     print("\n--- Introduction ---")
     print("This is a quiz where you will be asked about the capital cities of various countries.")
@@ -24,13 +23,44 @@ def show_introduction():
 
 def show_how_to_play():
     print("\n--- How to Play ---")
-    print("1. You will be asked to name the capital of a given country.")
+    print("\n1. You will be asked to name the capital of a given country.")
     print("2. Four possible capital cities will be offered, labeled A, B, C, and D.")
     print("3. Type the letter (A, B, C, or D) that corresponds to the correct capital and press Enter.")
     print("4. You will receive feedback after each question.")
     print("5. At the end, you'll see your final score.\n")
 
 
+
+def start_quiz():
+    print("\nStarting the quiz...\n")
+
+
+def main_menu():
+    while True:
+        show_welcome()
+        print("\nPlease select an option:")
+        print("1. Introduction")
+        print("2. How to Play")
+        print("3. Start Quiz")
+        print("4. Exit\n")
+
+        choice = input("Enter your choice (1-4): ")
+
+        if choice == "1":
+            show_introduction()
+        elif choice == "2":
+            show_how_to_play()
+        elif choice == "3":
+            start_quiz()
+        elif choice == "4":
+            print("Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please enter a number from 1 to 4.\n")
+
+
+
+main_menu()
 show_welcome()
 show_introduction()
 show_how_to_play()
