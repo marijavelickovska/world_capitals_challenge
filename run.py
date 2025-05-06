@@ -5,7 +5,7 @@
 import dataQuiz
 
 quiz_questions = dataQuiz.quiz_questions
-print(quiz_questions)
+#print(quiz_questions)
 
 def show_welcome():
     print("="*40)
@@ -35,6 +35,14 @@ def start_quiz():
     print("\nStarting the quiz...\n")
 
 
+def back_to_main_menu():
+    back = input("If you want to go back to the main menu, enter 'yes'")
+
+    if back == "yes":
+        main_menu()
+    
+
+
 def main_menu():
     while True:
         show_welcome()
@@ -48,8 +56,10 @@ def main_menu():
 
         if choice == "1":
             show_introduction()
+            back_to_main_menu()
         elif choice == "2":
             show_how_to_play()
+            back_to_main_menu()
         elif choice == "3":
             start_quiz()
         elif choice == "4":
