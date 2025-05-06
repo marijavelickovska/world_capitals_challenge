@@ -46,6 +46,10 @@ def back_to_main_menu():
 
     
 def validate_input(choice): 
+    if not choice.isdigit():
+        print("Invalid input: You must enter a number between 1 and 4.\n")
+        return False
+    
     try:
         if int(choice) not in range(1,5):
             raise ValueError("You need to enter a number from 1 to 4")
