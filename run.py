@@ -53,7 +53,7 @@ def validate_choice_input(choice):
 
 #def validate_back_input():
    
-
+#def validate_user_answer_input():
 
 def back_to_main_menu():
     back = input("If you want to go back to the main menu, enter 'yes'\n")
@@ -71,8 +71,6 @@ def show_quiz():
         print()   
         user_answer = input("Your answer (A, B, C or D): ").strip().upper()
      
-
-show_quiz()
 
 
 def main_menu():
@@ -93,6 +91,7 @@ def main_menu():
                 show_how_to_play()
             elif choice == "3":
                 start_quiz()
+                show_quiz()
             elif choice == "4":
                 print("Goodbye!")
                 return False
@@ -100,4 +99,4 @@ def main_menu():
                 print("Invalid choice. Please enter a number from 1 to 4.\n")
 
 
-#main_menu()
+main_menu()
