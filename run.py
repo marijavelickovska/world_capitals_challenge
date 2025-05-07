@@ -69,12 +69,15 @@ def back_to_main_menu():
 
 def show_quiz():
     for question in quiz_questions:
+        print("-"*40)
         print(question["question"])
+        print("-"*40)
         print()
         for letter, answer in question["answers"].items():
             print(f"{letter}. {answer}")
-    print()   
+        print()
     user_answer = input("Your answer (A, B, C or D): ").strip().upper()
+   
     back_to_main_menu()
      
 
