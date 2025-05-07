@@ -57,8 +57,8 @@ def validate_back_input(word_yes):
         return False
 
     try:
-        if not word_yes.lower().startswith('y'):
-            raise ValueError("You need to enter the word 'yes' if you want to return to the main menu.")
+        if word_yes.lower() != "yes":
+            raise ValueError("You must enter exactly 'yes' to go back to the main menu.")
     except ValueError as e:
         print(f"Invalid data: {e}, please try again.\n")
         return False
