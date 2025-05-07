@@ -37,12 +37,8 @@ def start_quiz():
 
 
 def validate_choice_input(choice): 
-    if not choice.isdigit():
-        print("Invalid input: You must enter a number between 1 and 4.\n")
-        return False
-    
     try:
-        if int(choice) not in range(1,5):
+        if not choice.isdigit() or int(choice) not in range(1,5):
             raise ValueError("You need to enter a number from 1 to 4")
     except ValueError as e:
         print(f"Invalid data: {e}, please try again.\n")
@@ -52,13 +48,9 @@ def validate_choice_input(choice):
 
 
 def validate_back_input(word_yes):
-    if not word_yes.isalpha():
-        print("Invalid input: Please enter the word 'yes' if you want to return to the main menu.")
-        return False
-
     try:
-        if word_yes.lower() != "yes":
-            raise ValueError("You must enter exactly 'yes' to go back to the main menu.")
+        if not word_yes.isalpha() or word_yes.lower() != "yes":
+            raise ValueError("You must enter exactly 'yes' to go back to the main menu")
     except ValueError as e:
         print(f"Invalid data: {e}, please try again.\n")
         return False
