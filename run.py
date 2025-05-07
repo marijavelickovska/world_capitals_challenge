@@ -51,25 +51,36 @@ def validate_choice_input(choice):
     return True
 
 
-#def validate_back_input():
-   
-#def validate_user_answer_input():
+def validate_back_input(word_yes):
+    if not word_yes.isalpha():
+        print("Invalid input: Please enter the word 'yes' if you want to return to the main menu.")
+
+    try:
+        if not word_yes.lower().startswith('y'):
+            raise ValueError("You need to enter the word 'yes' if you want to return to the main menu.")
+    except ValueError as e:
+        print(f"Invalid data: {e}, please try again.\n")
+        return False
+
+    return True
+
 
 def back_to_main_menu():
-    back = input("If you want to go back to the main menu, enter 'yes'\n")
+    word_yes = input("If you want to go back to the main menu, enter 'yes'\n")
 
-    if back == "yes":
+    if validate_back_input(word_yes):
         main_menu()
 
 
 def show_quiz():
-     for question in quiz_questions:
+    for question in quiz_questions:
         print(question["question"])
         print()
         for letter, answer in question["answers"].items():
             print(f"{letter}. {answer}")
-        print()   
-        user_answer = input("Your answer (A, B, C or D): ").strip().upper()
+    print()   
+    user_answer = input("Your answer (A, B, C or D): ").strip().upper()
+    back_to_main_menu()
      
 
 
