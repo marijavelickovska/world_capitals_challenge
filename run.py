@@ -76,7 +76,7 @@ def show_quiz():
         for letter, answer in question["answers"].items():
             print(f"{letter}. {answer}")
         print()
-    user_answer = input("Your answer (A, B, C or D): ").strip().upper()
+        user_answer = input("Your answer (A, B, C or D): ").strip().upper()
    
     back_to_main_menu()
      
