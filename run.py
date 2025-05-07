@@ -54,6 +54,7 @@ def validate_choice_input(choice):
 def validate_back_input(word_yes):
     if not word_yes.isalpha():
         print("Invalid input: Please enter the word 'yes' if you want to return to the main menu.")
+        return False
 
     try:
         if not word_yes.lower().startswith('y'):
@@ -70,6 +71,8 @@ def back_to_main_menu():
 
     if validate_back_input(word_yes):
         main_menu()
+    else:
+        back_to_main_menu()
 
 
 def show_quiz():
