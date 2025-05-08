@@ -38,10 +38,10 @@ def show_how_to_play():
     back_to_main_menu()
 
 
-def validate_back_input(word_yes):
+def validate_yes_no_input(yes_no_answer):
     try:
-        if not word_yes.isalpha() or word_yes.lower() != "yes":
-            raise ValueError("You must enter exactly 'yes' to go back to the main menu")
+        if yes_no_answer not in ("yes", "no"):
+            raise ValueError("You must enter exactly 'yes' or 'no'")
     except ValueError as e:
         print(f"Invalid data: {e}, please try again.\n")
         return False
@@ -61,13 +61,16 @@ def validate_choice_input(choice, options):
 
 
 def back_to_main_menu():
-    word_yes = input("If you want to go back to the main menu, enter 'yes'\n")
+    yes_no_answer = input("Would you like to take the quiz? Enter yes/no\n").lower()
     clear()
 
-    if validate_back_input(word_yes):
-        main_menu()
-    else:
-        back_to_main_menu()
+    if validate_yes_no_input(yes_no_answer):
+        if yes_no_answer == "yes":
+            start_quiz() 
+        elif yes_no_answer == "no":
+            main_menu()
+        else:
+            print("Please enter a valid answer (yes or no).\n")
 
 
 def check_if_correct(user_answer, correct_answer, user_text, correct_text, country):
@@ -91,7 +94,16 @@ def end_quiz():
         print("You completed the quiz!")
         print("-"*40)
         print(f"Your final score is {score}/15\n")
-        input("Would you like to play again? yes/no\n")
+        yes_no_answer = input("Would you like to play again? Enter yes/no\n").lower()
+        clear()
+
+        if validate_yes_no_input(yes_no_answer):
+            if yes_no_answer == "yes":
+                start_quiz() 
+            elif yes_no_answer == "no":
+                main_menu()
+            else:
+                print("Please enter a valid answer (yes or no).\n")
 
 
 
