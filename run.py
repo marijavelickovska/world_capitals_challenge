@@ -2,10 +2,11 @@
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
-import dataQuiz
+import dataQuiz 
 from pprint import pprint
 
 quiz_questions = dataQuiz.quiz_questions
+score = 0
 #pprint(quiz_questions)
 
 
@@ -30,10 +31,7 @@ def show_how_to_play():
     print("4. You will receive feedback after each question.")
     print("5. At the end, you'll see your final score.\n")
     back_to_main_menu()
-
-
-def start_quiz():
-    print("\nStarting the quiz...\n")
+    
 
 
 def validate_choice_input(choice): 
@@ -58,6 +56,17 @@ def validate_back_input(word_yes):
     return True
 
 
+
+def check_if_correct(user_answer, correct_answer):
+    global score
+    print(user_answer)
+    print(correct_answer)
+    if user_answer == correct_answer:
+        score += 1
+    print(score)
+
+
+
 def back_to_main_menu():
     word_yes = input("If you want to go back to the main menu, enter 'yes'\n")
 
@@ -67,7 +76,8 @@ def back_to_main_menu():
         back_to_main_menu()
 
 
-def show_quiz():
+def start_quiz():
+    print("\nStarting the quiz...\n")
     for question in quiz_questions:
         print("-"*40)
         print(question["question"])
@@ -76,7 +86,9 @@ def show_quiz():
         for letter, answer in question["answers"].items():
             print(f"{letter}. {answer}")
         print()
-        user_answer = input("Your answer (A, B, C or D): ").strip().upper()
+        user_answer = input("Your answer (A, B, C or D): \n").strip().upper()
+        correct_answer = question["correct_answer"]
+        check_if_correct(user_answer, correct_answer)
    
     back_to_main_menu()
      
@@ -100,7 +112,6 @@ def main_menu():
                 show_how_to_play()
             elif choice == "3":
                 start_quiz()
-                show_quiz()
             elif choice == "4":
                 print("Goodbye!")
                 return False
