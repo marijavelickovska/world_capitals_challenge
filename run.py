@@ -10,6 +10,13 @@ score = 0
 #pprint(quiz_questions)
 
 
+def clear():
+    """
+    Clear function to clean-up the terminal so things don't get messy.
+    """
+    print("\033c")
+
+
 def show_welcome():
     print("="*40)
     print("Welcome to the World Capitals Challenge")
@@ -89,6 +96,7 @@ def start_quiz():
             print(f"{letter}. {answer}")
         print()
         user_answer = input("Your answer (A, B, C or D): \n").strip().upper()
+        clear()
         correct_answer = question["correct_answer"]
         check_if_correct(user_answer, correct_answer)
    
@@ -105,6 +113,7 @@ def main_menu():
         print("4. Exit\n")
 
         choice = input("Enter your choice (1-4): \n")
+        clear()
 
         if validate_choice_input(choice):
             if choice == "1":
