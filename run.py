@@ -56,6 +56,8 @@ def validate_back_input(word_yes):
     return True
 
 
+#def validate_user_answer(user_answer):
+
 
 def check_if_correct(user_answer, correct_answer):
     global score
@@ -89,10 +91,10 @@ def start_quiz():
         user_answer = input("Your answer (A, B, C or D): \n").strip().upper()
         correct_answer = question["correct_answer"]
         check_if_correct(user_answer, correct_answer)
-   
-    back_to_main_menu()
-     
 
+   
+back_to_main_menu()
+     
 
 def main_menu():
     while True:
