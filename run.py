@@ -110,8 +110,6 @@ def start_quiz():
             
    
    
-     
-
 def main_menu():
     while True:
         show_welcome()
@@ -139,4 +137,6 @@ def main_menu():
                 print("Invalid choice. Please enter a number from 1 to 4.\n")
 
 
-main_menu()
+if __name__ == "__main__":
+    clear()
+    main_menu()
