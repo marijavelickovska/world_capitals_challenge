@@ -1,11 +1,10 @@
 import time
 import random
 import dataQuiz 
-from pprint import pprint
+
 
 quiz_questions = random.sample(dataQuiz.quiz_questions, 15)
 score = 0
-#pprint(quiz_questions)
 
 
 def clear():
@@ -25,7 +24,7 @@ def show_introduction():
     print("\n--- Introduction ---")
     print("\nThis is a quiz where you will be asked about the capital cities of various countries.")
     print("Try to answer as many questions correctly as you can!\n")
-    back_to_main_menu()
+    ask_to_play_quiz()
 
 
 def show_how_to_play():
@@ -35,7 +34,7 @@ def show_how_to_play():
     print("3. Type the letter (A, B, C, or D) that corresponds to the correct capital and press Enter.")
     print("4. You will receive feedback after each question.")
     print("5. At the end, you'll see your final score.\n")
-    back_to_main_menu()
+    ask_to_play_quiz()
 
 
 def validate_yes_no_input(yes_no_answer):
@@ -60,7 +59,7 @@ def validate_choice_input(choice, options):
     return True
 
 
-def back_to_main_menu():
+def ask_to_play_quiz():
     yes_no_answer = input("Would you like to take the quiz? Enter yes/no\n").lower()
     clear()
 
