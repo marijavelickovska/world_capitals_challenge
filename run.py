@@ -36,17 +36,6 @@ def show_how_to_play():
     print("4. You will receive feedback after each question.")
     print("5. At the end, you'll see your final score.\n")
     back_to_main_menu()
-    
-
-def validate_choice_input(choice, options): 
-    try:
-        if not choice.strip().lower() in options:
-            raise ValueError(f"You need to enter a valid option")
-    except ValueError as e:
-        print(f"{choice} is Invalid: {e}, please try again\n")
-        return False
-
-    return True
 
 
 def validate_back_input(word_yes):
@@ -59,6 +48,26 @@ def validate_back_input(word_yes):
 
     return True
 
+    
+def validate_choice_input(choice, options): 
+    try:
+        if not choice.strip().lower() in options:
+            raise ValueError(f"You need to enter a valid option")
+    except ValueError as e:
+        print(f"{choice} is Invalid: {e}, please try again\n")
+        return False
+
+    return True
+
+
+def back_to_main_menu():
+    word_yes = input("If you want to go back to the main menu, enter 'yes'\n")
+    clear()
+
+    if validate_back_input(word_yes):
+        main_menu()
+    else:
+        back_to_main_menu()
 
 
 def check_if_correct(user_answer, correct_answer, user_text, correct_text, country):
@@ -76,15 +85,14 @@ def check_if_correct(user_answer, correct_answer, user_text, correct_text, count
     print(f"Your score is: {score}\n")
 
 
+def end_quiz():
+        clear()
+        print("-"*40)
+        print("You completed the quiz!")
+        print("-"*40)
+        print(f"Your final score is {score}/15\n")
+        input("Would you like to play again? yes/no\n")
 
-def back_to_main_menu():
-    word_yes = input("If you want to go back to the main menu, enter 'yes'\n")
-    clear()
-
-    if validate_back_input(word_yes):
-        main_menu()
-    else:
-        back_to_main_menu()
 
 
 def start_quiz():
@@ -110,7 +118,8 @@ def start_quiz():
             correct_text = question["answers"][correct_answer]
             country = question["country"]
             check_if_correct(user_answer, correct_answer, user_text, correct_text, country)
-        
+        if index == len(quiz_questions):
+            end_quiz()
             
    
    
