@@ -1,8 +1,9 @@
 import time
+import random
 import dataQuiz 
 from pprint import pprint
 
-quiz_questions = dataQuiz.quiz_questions
+quiz_questions = random.sample(dataQuiz.quiz_questions, 15)
 score = 0
 #pprint(quiz_questions)
 
@@ -89,7 +90,7 @@ def back_to_main_menu():
 
 def start_quiz():
     print("\nStarting the quiz...\n")
-    time.sleep(2)
+    time.sleep(1)
     for question in quiz_questions:
         print("-"*40)
         print(f"What is the capital of {question['country']}?")
