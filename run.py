@@ -38,7 +38,6 @@ def show_how_to_play():
     back_to_main_menu()
     
 
-
 def validate_choice_input(choice, options): 
     try:
         if not choice.strip().lower() in options:
@@ -74,7 +73,7 @@ def check_if_correct(user_answer, correct_answer, user_text, correct_text, count
     else:
         print(f"Your Answer: {user_answer}. {user_text} {is_correct}")
         print(f"Correct Answer: {correct_text} is the capital of {country}")
-    print(score)
+    print(f"Your score is: {score}\n")
 
 
 
@@ -91,7 +90,9 @@ def back_to_main_menu():
 def start_quiz():
     print("\nStarting the quiz...\n")
     time.sleep(1)
+    index = 1
     for question in quiz_questions:
+        print(f"Question {index}/15")
         print("-"*40)
         print(f"What is the capital of {question['country']}?")
         print("-"*40)
@@ -103,11 +104,13 @@ def start_quiz():
         clear()
         options = ["a", "b", "c", "d"]
         if validate_choice_input(user_answer, options):
+            index += 1
             correct_answer = question["correct_answer"]
             user_text = question["answers"][user_answer]
             correct_text = question["answers"][correct_answer]
             country = question["country"]
             check_if_correct(user_answer, correct_answer, user_text, correct_text, country)
+        
             
    
    
