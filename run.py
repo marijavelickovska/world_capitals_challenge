@@ -41,12 +41,12 @@ def show_how_to_play():
     
 
 
-def validate_choice_input(choice): 
+def validate_choice_input(choice, options): 
     try:
-        if not choice.isdigit() or int(choice) not in range(1,5):
-            raise ValueError("You need to enter a number from 1 to 4")
+        if not choice.strip().lower() in options:
+            raise ValueError(f"You need to enter a valid option")
     except ValueError as e:
-        print(f"Invalid data: {e}, please try again.\n")
+        print(f"{choice} is Invalid: {e}, please try again\n")
         return False
 
     return True
@@ -63,21 +63,26 @@ def validate_back_input(word_yes):
     return True
 
 
-#def validate_user_answer(user_answer):
 
-
-def check_if_correct(user_answer, correct_answer):
+def check_if_correct(user_answer, correct_answer, user_text, correct_text, country):
     global score
-    print(user_answer)
-    print(correct_answer)
+    #print(user_answer)
+    #print(correct_answer)
+    is_correct = "❌"
     if user_answer == correct_answer:
         score += 1
+        is_correct = "✅"
+        print(f"{is_correct} Correct: {correct_text} is the capital of {country}")
+    else:
+        print(f"Your Answer: {user_answer}. {user_text} {is_correct}")
+        print(f"Correct Answer: {correct_text} is the capital of {country}")
     print(score)
 
 
 
 def back_to_main_menu():
     word_yes = input("If you want to go back to the main menu, enter 'yes'\n")
+    clear()
 
     if validate_back_input(word_yes):
         main_menu()
@@ -89,7 +94,7 @@ def start_quiz():
     print("\nStarting the quiz...\n")
     for question in quiz_questions:
         print("-"*40)
-        print(question["question"])
+        print(f"What is the capital of {question['country']}?")
         print("-"*40)
         print()
         for letter, answer in question["answers"].items():
@@ -97,10 +102,16 @@ def start_quiz():
         print()
         user_answer = input("Your answer (A, B, C or D): \n").strip().upper()
         clear()
-        correct_answer = question["correct_answer"]
-        check_if_correct(user_answer, correct_answer)
+        options = ["a", "b", "c", "d"]
+        if validate_choice_input(user_answer, options):
+            correct_answer = question["correct_answer"]
+            user_text = question["answers"][user_answer]
+            correct_text = question["answers"][correct_answer]
+            country = question["country"]
+            check_if_correct(user_answer, correct_answer, user_text, correct_text, country)
+            
    
-    back_to_main_menu()
+   
      
 
 def main_menu():
@@ -114,8 +125,9 @@ def main_menu():
 
         choice = input("Enter your choice (1-4): \n")
         clear()
+        options = ["1", "2", "3", "4"]
 
-        if validate_choice_input(choice):
+        if validate_choice_input(choice, options):
             if choice == "1":
                 show_introduction()
             elif choice == "2":
