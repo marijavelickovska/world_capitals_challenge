@@ -59,10 +59,7 @@ def validate_choice_input(choice, options):
     return True
 
 
-def ask_to_play_quiz():
-    yes_no_answer = input("Would you like to take the quiz? Enter yes/no\n").lower()
-    clear()
-
+def handle_yes_no_response(yes_no_answer):
     if validate_yes_no_input(yes_no_answer):
         if yes_no_answer == "yes":
             start_quiz() 
@@ -70,6 +67,14 @@ def ask_to_play_quiz():
             main_menu()
         else:
             print("Please enter a valid answer (yes or no).\n")
+
+
+
+def ask_to_play_quiz():
+    yes_no_answer = input("Would you like to take the quiz? Enter yes/no\n").lower()
+    clear()
+    handle_yes_no_response(yes_no_answer)
+
 
 
 def check_if_correct(user_answer, correct_answer, user_text, correct_text, country):
@@ -93,16 +98,10 @@ def end_quiz():
         print("You completed the quiz!")
         print("-"*40)
         print(f"Your final score is {score}/15\n")
+        print("-"*40)
         yes_no_answer = input("Would you like to play again? Enter yes/no\n").lower()
         clear()
-
-        if validate_yes_no_input(yes_no_answer):
-            if yes_no_answer == "yes":
-                start_quiz() 
-            elif yes_no_answer == "no":
-                main_menu()
-            else:
-                print("Please enter a valid answer (yes or no).\n")
+        handle_yes_no_response(yes_no_answer)
 
 
 
