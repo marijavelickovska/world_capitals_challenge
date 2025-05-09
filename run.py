@@ -156,9 +156,10 @@ def start_quiz():
     """
     print("\nStarting the quiz...\n")
     time.sleep(1)
-    index = 1
-    for question in quiz_questions:
-        print(f"Question {index}/15")
+    index = 0
+    while index < len(quiz_questions):
+        question = quiz_questions[index]
+        print(f"Question {index + 1}/15")
         print("-"*40)
         print(f"What is the capital of {question['country']}?")
         print("-"*40)
