@@ -15,12 +15,18 @@ def clear():
 
 
 def show_welcome():
+    """ 
+    Displays a welcome message to the user when the program starts.
+    """
     print("="*40)
     print("Welcome to the World Capitals Challenge")
     print("="*40)
 
 
 def show_introduction():
+    """
+    Displays an introduction to the quiz, explaining the quiz and how to proceed.
+    """
     print("\n--- Introduction ---")
     print("\nThis is a quiz where you will be asked about the capital cities of various countries.")
     print("Try to answer as many questions correctly as you can!\n")
@@ -28,6 +34,9 @@ def show_introduction():
 
 
 def show_how_to_play():
+    """
+    Displays instructions on how to play the quiz and how to proceed.
+    """
     print("\n--- How to Play ---")
     print("\n1. You will be asked to name the capital of a given country.")
     print("2. Four possible capital cities will be offered, labeled A, B, C, and D.")
@@ -38,6 +47,10 @@ def show_how_to_play():
 
 
 def validate_yes_no_input(yes_no_answer):
+    """
+    Validates the user's input to ensure it is either 'yes' or 'no'. 
+    Displays an error message for invalid input.
+    """
     try:
         if yes_no_answer not in ("yes", "no"):
             raise ValueError("You must enter exactly 'yes' or 'no'")
@@ -49,6 +62,10 @@ def validate_yes_no_input(yes_no_answer):
 
     
 def validate_choice_input(choice, options): 
+    """
+    Validates the user's choice input to ensure it is one of the options: 'A', 'B', 'C', or 'D'.
+    Displays an error message for invalid input.
+    """
     try:
         if not choice.strip().lower() in options:
             raise ValueError(f"You need to enter a valid option")
@@ -60,6 +77,11 @@ def validate_choice_input(choice, options):
 
 
 def handle_yes_no_response(yes_no_answer):
+    """
+    Handles the user's yes/no response. First, validates the input. 
+    If valid, directs the user to the appropriate action (either the quiz or main menu) and returns true (to break the while loop). 
+    If the input is invalid, returns false (so the while loop can show the input again to ask for a valid response).
+    """
     if validate_yes_no_input(yes_no_answer):
         if yes_no_answer == "yes":
             start_quiz()
@@ -71,8 +93,11 @@ def handle_yes_no_response(yes_no_answer):
         return False
 
 
-
 def ask_to_play_quiz():
+    """
+    Asks the user if they would like to play the quiz by prompting for a yes/no response. 
+    Calls the handle_yes_no_response function to validate the input and direct the user based on their answer.
+    """
     while True:
         yes_no_answer = input("Would you like to take the quiz? Enter yes/no\n").lower()
         clear()
@@ -80,11 +105,14 @@ def ask_to_play_quiz():
             break
 
 
-
 def check_if_correct(user_answer, correct_answer, user_text, correct_text, country):
+    """
+    Checks if the user's answer matches the correct answer. 
+    If correct, increases the score by 1 and displays the user's correct answer. 
+    If incorrect, shows the user's answer along with the correct one.
+    At the end, prints the user's current score.
+    """
     global score
-    #print(user_answer)
-    #print(correct_answer)
     is_correct = "❌"
     if user_answer == correct_answer:
         score += 1
@@ -97,6 +125,11 @@ def check_if_correct(user_answer, correct_answer, user_text, correct_text, count
 
 
 def end_quiz():
+        """
+        Displays a message that the quiz is complete and shows the user's final score. 
+        Prompts the user with an input asking if they would like to play again, 
+        then calls the function to handle the answer and redirects the user based on their response.
+        """
         clear()
         print("*"*40)
         print("You completed the quiz!")
@@ -113,8 +146,14 @@ def end_quiz():
                 break
 
 
-
 def start_quiz():
+    """
+    Starts the quiz by randomly selecting 15 out of 30 questions. 
+    For each question, displays four possible answers and prompts the user to enter their answer using A, B, C, or D. 
+    Validates the user's input using the validate_choice_input function. 
+    Increments the index to move to the next question and calls the check_if_correct function to evaluate the answer. 
+    At the end, checks if the index is equal to the total number of quiz questions and, if so, calls the end_quiz function.
+    """
     print("\nStarting the quiz...\n")
     time.sleep(1)
     index = 1
@@ -141,8 +180,12 @@ def start_quiz():
             end_quiz()
             
    
-   
 def main_menu():
+    """
+    Displays the welcome message and a list of menu options for the user to choose from. 
+    Prompts the user to enter a number between 1 and 4. 
+    Validates the user's input using the validate_choice_input function and, if valid, redirects them based on their selection.
+    """
     while True:
         show_welcome()
         print("\nPlease select an option:")
@@ -169,6 +212,7 @@ def main_menu():
                 print("Invalid choice. Please enter a number from 1 to 4.\n")
 
 
+#Clears the screen and starts the main menu when the script is executed directly.
 if __name__ == "__main__":
     clear()
     main_menu()
