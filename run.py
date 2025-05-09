@@ -98,11 +98,14 @@ def check_if_correct(user_answer, correct_answer, user_text, correct_text, count
 
 def end_quiz():
         clear()
-        print("-"*40)
+        print("*"*40)
         print("You completed the quiz!")
+        print("*"*40)
+        print()
         print("-"*40)
-        print(f"Your final score is {score}/15\n")
+        print(f"Your final score is {score}/15")
         print("-"*40)
+        print()
         yes_no_answer = input("Would you like to play again? Enter yes/no\n").lower()
         clear()
         handle_yes_no_response(yes_no_answer)
