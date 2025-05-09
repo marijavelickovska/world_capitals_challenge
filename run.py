@@ -106,9 +106,11 @@ def end_quiz():
         print(f"Your final score is {score}/15")
         print("-"*40)
         print()
-        yes_no_answer = input("Would you like to play again? Enter yes/no\n").lower()
-        clear()
-        handle_yes_no_response(yes_no_answer)
+        while True:
+            yes_no_answer = input("Would you like to play again? Enter yes/no\n").lower()
+            clear()
+            if handle_yes_no_response(yes_no_answer):
+                break
 
 
 
