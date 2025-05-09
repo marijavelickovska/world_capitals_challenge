@@ -46,6 +46,15 @@ def show_how_to_play():
     ask_to_play_quiz()
 
 
+def exit():
+    print("-"*40)
+    print("Goodbye!")
+    print("-"*40)
+    print()
+    ask_to_play_quiz()
+
+
+
 def validate_yes_no_input(yes_no_answer):
     """
     Validates the user's input to ensure it is either 'yes' or 'no'. 
@@ -207,7 +216,7 @@ def main_menu():
             elif choice == "3":
                 start_quiz()
             elif choice == "4":
-                print("Goodbye!")
+                exit()
                 return False
             else:
                 print("Invalid choice. Please enter a number from 1 to 4.\n")
