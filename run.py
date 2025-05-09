@@ -42,7 +42,7 @@ def validate_yes_no_input(yes_no_answer):
         if yes_no_answer not in ("yes", "no"):
             raise ValueError("You must enter exactly 'yes' or 'no'")
     except ValueError as e:
-        print(f"Invalid data: {e}, please try again.\n")
+        print(f"{yes_no_answer} is Invalid: {e}, please try again\n")
         return False
 
     return True
