@@ -54,7 +54,6 @@ def exit():
     print(f"{Fore.YELLOW}Goodbye!")
     print("-"*40)
     print()
-    ask_to_play_quiz()
 
 
 def validate_yes_no_input(yes_no_answer):
