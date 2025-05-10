@@ -128,15 +128,6 @@ I've used [Lucidchart](https://www.lucidchart.com/pages/examples/flowchart-maker
 | [![badge](https://img.shields.io/badge/W3Schools-grey?logo=w3schools&logoColor=04AA6D)](https://www.w3schools.com) | Tutorials/Reference Guide |
 | [![badge](https://img.shields.io/badge/StackOverflow-grey?logo=stackoverflow&logoColor=F58025)](https://stackoverflow.com) | Troubleshooting and Debugging |
 
-⚠️ NOTE ⚠️
-
-Want to add more?
-
-- Tutorial: https://shields.io/badges/static-badge
-- Icons/Logos: https://simpleicons.org
-  - FYI: not all logos are available to use
-
-🛑 --- END --- 🛑
 
 ## Database Design
 
@@ -160,20 +151,32 @@ The "Love Sandwiches" sample flowchart in Markdown syntax using Mermaid can be s
 
 **NOTE**: A Markdown Preview tool doesn't show the interactive flowchart, you must first commit/push the code to your GitHub repository in order to see it live in action.
 
-```mermaid
 flowchart TD
-    A[Start] --> B[Get Sales Data]
-    B --> C{Is Data Valid?}
-    C -->|Yes| D[Convert Data to Integers]
-    C -->|No| B
-    D --> E[Update Sales Worksheet]
-    E --> F[Calculate Surplus Data]
-    F --> G[Update Surplus Worksheet]
-    G --> H[Get Last 5 Sales Entries]
-    H --> I[Calculate Stock Data]
-    I --> J[Update Stock Worksheet]
-    J --> K[End]
-```
+    A[Main Menu] -->|Start Quiz| B[Start Quiz]
+    A -->|How to Play| C[How to Play]
+    A -->|Exit| D[Exit]
+    B --> E[Display Question + Options]
+    E --> F[User Inputs A/B/C/D]
+    F --> G[Validate User Answer]
+    G --> H[Check if Correct]
+    H --> I[Update Score]
+    I --> J[After 15 Questions -> Shows Final Score]
+    J --> K[User Input for Play Again]
+    K -->|Yes| B
+    K -->|No| A
+    C --> L[Display How to Play]
+    L --> M[User Input for Start Quiz]
+    M --> N[Validate Yes/No Input]
+    N -->|Yes| B
+    N -->|No| A
+    B --> O[Introduction]
+    O --> P[Display Introduction]
+    P --> Q[User Input for Start Quiz]
+    Q --> R[Validate Yes/No Input]
+    R -->|Yes| B
+    R -->|No| A
+    D --> S[Goodbye Message]
+
 
 Source: [Mermaid Flowchart for Love Sandwiches](https://mermaid.live/edit#pako:eNpdkctugzAQRX_F8jpZdsOiVXkkIa26SR9qgcUIJoAwNjLjVlXIv5cMJErjlWfu8b0z8kHmpkDpyb0yP3kFlsRrmGoxnsdkR2OdieXyXvjJGknsQGEvQiDIJsZnMTjEU1e8g6qLh-MkBidx-MR-EGESGP2NoztjZESsCUu0fXbNvphB-FMjZOcoeesKIJyTP4xt-gqR5lcRQ6skAJU7xZyznXL_ZlwxtL44zcSt15qxDe_5DD2Juzk00mRrPA-6YSy-jiSTN9eBMSPbSyDrt3Fbhp6SSBeZXMgWbQt1MX7E4aSnkipsMZXeeC3ANqlM9XHkwJHZ_epcemQdLqTjjLCG0kJ7bnagv4y5lNa4spLeHlSPxz-Rd5za)
 

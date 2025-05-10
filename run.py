@@ -14,7 +14,7 @@ def clear():
     """
     Clear function to clean-up the terminal so things don't get messy.
     """
-    print("\033c") #The code was taken from Stack Overflow
+    print("\033c") #The code was taken from Stack Overflow (https://stackoverflow.com/a/50921841)
 
 
 def show_welcome():
