@@ -80,9 +80,9 @@ quiz_questions = [
         "correct_answer": "B"
     },
     {
-        "country": "South Korea",
-        "answers": {"A": "Busan", "B": "Incheon", "C": "Seoul", "D": "Daegu"},
-        "correct_answer": "C"
+        "country": "Macedonia",
+        "answers": {"A": "Bitola", "B": "Skopje", "C": "Ohrid", "D": "Prilep"},
+        "correct_answer": "B"
     },
     {
         "country": "South Africa",
@@ -100,9 +100,9 @@ quiz_questions = [
         "correct_answer": "C"
     },
     {
-        "country": "Poland",
-        "answers": {"A": "Kraków", "B": "Warsaw", "C": "Wrocław", "D": "Gdańsk"},
-        "correct_answer": "B"
+        "country": "Serbia",
+        "answers": {"A": "Novi Sad", "B": "Niš", "C": "Belgrade", "D": "Kragujevac"},
+        "correct_answer": "C"
     },
     {
         "country": "the Netherlands",

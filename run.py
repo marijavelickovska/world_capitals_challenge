@@ -1,6 +1,9 @@
 import time
 import random
 import dataQuiz 
+import colorama
+from colorama import Fore, Back, Style
+colorama.init(autoreset=True)
 
 
 quiz_questions = random.sample(dataQuiz.quiz_questions, 15)
@@ -11,23 +14,23 @@ def clear():
     """
     Clear function to clean-up the terminal so things don't get messy.
     """
-    print("\033c")
+    print("\033c") #The code was taken from Stack Overflow
 
 
 def show_welcome():
     """ 
     Displays a welcome message to the user when the program starts.
     """
-    print("="*40)
-    print("Welcome to the World Capitals Challenge")
-    print("="*40)
+    print("="*45)
+    print(f"{Fore.YELLOW} Welcome to the World Capitals Challenge 🗺️")
+    print("="*45)
 
 
 def show_introduction():
     """
     Displays an introduction to the quiz, explaining the quiz and how to proceed.
     """
-    print("\n--- Introduction ---")
+    print(f"{Fore.YELLOW}\n--- Introduction ---")
     print("\nThis is a quiz where you will be asked about the capital cities of various countries.")
     print("Try to answer as many questions correctly as you can!\n")
     ask_to_play_quiz()
@@ -37,7 +40,7 @@ def show_how_to_play():
     """
     Displays instructions on how to play the quiz and how to proceed.
     """
-    print("\n--- How to Play ---")
+    print(f"{Fore.YELLOW}\n--- How to Play ---")
     print("\n1. You will be asked to name the capital of a given country.")
     print("2. Four possible capital cities will be offered, labeled A, B, C, and D.")
     print("3. Type the letter (A, B, C, or D) that corresponds to the correct capital and press Enter.")
@@ -48,11 +51,10 @@ def show_how_to_play():
 
 def exit():
     print("-"*40)
-    print("Goodbye!")
+    print(f"{Fore.YELLOW}Goodbye!")
     print("-"*40)
     print()
     ask_to_play_quiz()
-
 
 
 def validate_yes_no_input(yes_no_answer):
@@ -62,9 +64,9 @@ def validate_yes_no_input(yes_no_answer):
     """
     try:
         if yes_no_answer not in ("yes", "no"):
-            raise ValueError("You must enter exactly 'yes' or 'no'")
+            raise ValueError(f"{Fore.RED}You must enter exactly 'yes' or 'no'")
     except ValueError as e:
-        print(f"{yes_no_answer} is Invalid: {e}, please try again\n")
+        print(f"{Fore.RED} {yes_no_answer} is Invalid: {e}, please try again\n")
         return False
 
     return True
@@ -77,9 +79,9 @@ def validate_choice_input(choice, options):
     """
     try:
         if not choice.strip().lower() in options:
-            raise ValueError(f"You need to enter a valid option")
+            raise ValueError(f"{Fore.RED} You need to enter a valid option")
     except ValueError as e:
-        print(f"{choice} is Invalid: {e}, please try again\n")
+        print(f"{Fore.RED} {choice} is Invalid: {e}, please try again\n")
         return False
 
     return True
@@ -108,7 +110,7 @@ def ask_to_play_quiz():
     Calls the handle_yes_no_response function to validate the input and direct the user based on their answer.
     """
     while True:
-        yes_no_answer = input("Would you like to take the quiz? Enter yes/no\n").lower()
+        yes_no_answer = input("Would you like to take the quiz? Enter yes/no ⬇️\n").lower()
         clear()
         if handle_yes_no_response(yes_no_answer):
             break
@@ -130,7 +132,7 @@ def check_if_correct(user_answer, correct_answer, user_text, correct_text, count
     else:
         print(f"Your Answer: {user_answer}. {user_text} {is_correct}")
         print(f"Correct Answer: {correct_text} is the capital of {country}")
-    print(f"Your score is: {score}\n")
+    print(f"{Style.BRIGHT}Your score is: {score}\n")
 
 
 def end_quiz():
@@ -141,15 +143,15 @@ def end_quiz():
         """
         clear()
         print("*"*40)
-        print("You completed the quiz!")
+        print(f"{Fore.YELLOW} You completed the quiz! 🏁")
         print("*"*40)
         print()
         print("-"*40)
-        print(f"Your final score is {score}/15")
+        print(f"{Style.BRIGHT} Your final score is {Fore.YELLOW}{score}{Fore.WHITE} / {Fore.GREEN}15")
         print("-"*40)
         print()
         while True:
-            yes_no_answer = input("Would you like to play again? Enter yes/no\n").lower()
+            yes_no_answer = input("Would you like to play again? Enter yes/no ⬇️\n").lower()
             clear()
             if handle_yes_no_response(yes_no_answer):
                 break
@@ -163,20 +165,20 @@ def start_quiz():
     Increments the index to move to the next question and calls the check_if_correct function to evaluate the answer. 
     At the end, checks if the index is equal to the total number of quiz questions and, if so, calls the end_quiz function.
     """
-    print("\nStarting the quiz...\n")
+    print(f"{Fore.GREEN}\nStarting the quiz...\n")
     time.sleep(1)
     index = 0
     while index < len(quiz_questions):
         question = quiz_questions[index]
         print(f"Question {index + 1}/15")
         print("-"*40)
-        print(f"What is the capital of {question['country']}?")
+        print(f"{Style.BRIGHT} What is the capital of {question['country']}?")
         print("-"*40)
         print()
         for letter, answer in question["answers"].items():
             print(f"{letter}. {answer}")
         print()
-        user_answer = input("Your answer (A, B, C or D): \n").strip().upper()
+        user_answer = input("Your answer (A, B, C or D): ⬇️ \n").strip().upper()
         clear()
         options = ["a", "b", "c", "d"]
         if validate_choice_input(user_answer, options):
@@ -204,7 +206,7 @@ def main_menu():
         print("3. Start Quiz")
         print("4. Exit\n")
 
-        choice = input("Enter your choice (1-4): \n")
+        choice = input("Enter your choice (1-4): ⬇️ \n")
         clear()
         options = ["1", "2", "3", "4"]
 
