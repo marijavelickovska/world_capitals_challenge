@@ -125,8 +125,10 @@ I've used [Lucidchart](https://www.lucidchart.com/pages/examples/flowchart-maker
 | [![badge](https://img.shields.io/badge/Heroku-grey?logo=heroku&logoColor=430098)](https://www.heroku.com) | Hosting the deployed back-end site. |
 | [![badge](https://img.shields.io/badge/ChatGPT-grey?logo=openai&logoColor=75A99C)](https://chat.openai.com) | Help debug, troubleshoot, and explain things. |
 | [![badge](https://img.shields.io/badge/Lucidchart-grey?logo=lucid&logoColor=F97B2C)](https://www.lucidchart.com) | Flow diagrams for mapping the app's logic. |
+| [![badge](https://img.shields.io/badge/Mermaid-grey?logo=mermaid&logoColor=FF3670)](https://mermaid.live) | Generate an interactive diagram for the data/schema. |
 | [![badge](https://img.shields.io/badge/W3Schools-grey?logo=w3schools&logoColor=04AA6D)](https://www.w3schools.com) | Tutorials/Reference Guide |
 | [![badge](https://img.shields.io/badge/StackOverflow-grey?logo=stackoverflow&logoColor=F58025)](https://stackoverflow.com) | Troubleshooting and Debugging |
+
 
 
 ## Database Design
@@ -139,48 +141,11 @@ To follow best practice, a flowchart was created for the app's logic, and mapped
 
 ![screenshot](documentation/flowchart.png)
 
-⚠️ RECOMMENDED ⚠️
+The diagram was created using [`Mermaid flowchart`](https://mermaid.live), a tool that allows for generating diagrams with simple text-based syntax. Mermaid makes it easy to visually represent structures or processes in a clear and understandable way.
 
-Looking for an interactive version of your flowchart? Consider using a [`Mermaid flowchart`](https://mermaid.live). To simplify the process, you can ask ChatGPT (or similar) the following prompt:
-
-> ChatGPT Prompt:
-> "Generate a Markdown syntax Mermaid flowchart using a screenshot of my existing flowchart"
-> [paste-your-flowchart-screenshot-into-ChatGPT]
-
-The "Love Sandwiches" sample flowchart in Markdown syntax using Mermaid can be seen below as an example.
-
-**NOTE**: A Markdown Preview tool doesn't show the interactive flowchart, you must first commit/push the code to your GitHub repository in order to see it live in action.
-
-flowchart TD
-    A[Main Menu] -->|Start Quiz| B[Start Quiz]
-    A -->|How to Play| C[How to Play]
-    A -->|Exit| D[Exit]
-    B --> E[Display Question + Options]
-    E --> F[User Inputs A/B/C/D]
-    F --> G[Validate User Answer]
-    G --> H[Check if Correct]
-    H --> I[Update Score]
-    I --> J[After 15 Questions -> Shows Final Score]
-    J --> K[User Input for Play Again]
-    K -->|Yes| B
-    K -->|No| A
-    C --> L[Display How to Play]
-    L --> M[User Input for Start Quiz]
-    M --> N[Validate Yes/No Input]
-    N -->|Yes| B
-    N -->|No| A
-    B --> O[Introduction]
-    O --> P[Display Introduction]
-    P --> Q[User Input for Start Quiz]
-    Q --> R[Validate Yes/No Input]
-    R -->|Yes| B
-    R -->|No| A
-    D --> S[Goodbye Message]
+![screenshot](documentation/diagram.png)
 
 
-Source: [Mermaid Flowchart for Love Sandwiches](https://mermaid.live/edit#pako:eNpdkctugzAQRX_F8jpZdsOiVXkkIa26SR9qgcUIJoAwNjLjVlXIv5cMJErjlWfu8b0z8kHmpkDpyb0yP3kFlsRrmGoxnsdkR2OdieXyXvjJGknsQGEvQiDIJsZnMTjEU1e8g6qLh-MkBidx-MR-EGESGP2NoztjZESsCUu0fXbNvphB-FMjZOcoeesKIJyTP4xt-gqR5lcRQ6skAJU7xZyznXL_ZlwxtL44zcSt15qxDe_5DD2Juzk00mRrPA-6YSy-jiSTN9eBMSPbSyDrt3Fbhp6SSBeZXMgWbQt1MX7E4aSnkipsMZXeeC3ANqlM9XHkwJHZ_epcemQdLqTjjLCG0kJ7bnagv4y5lNa4spLeHlSPxz-Rd5za)
-
-⚠️ --- END --- ⚠️
 
 #### Classes & Functions
 
