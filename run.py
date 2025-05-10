@@ -50,6 +50,7 @@ def show_how_to_play():
 
 
 def exit():
+    clear()
     print("-"*40)
     print(f"{Fore.YELLOW}Goodbye!")
     print("-"*40)

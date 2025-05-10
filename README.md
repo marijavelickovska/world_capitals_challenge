@@ -84,49 +84,34 @@ I've used [Lucidchart](https://www.lucidchart.com/pages/examples/flowchart-maker
 
 ## Features
 
-⚠️ INSTRUCTIONS ⚠️
-
-In this section, you should go over the different parts of your project, and describe each feature. You should explain what value each of the features provides for the user, focusing on your target audience, what they want to achieve, and how your project can help them achieve these things.
-
-**IMPORTANT**: Remember to always include a screenshot of each individual feature!
-
-⚠️ --- END --- ⚠️
-
 ### Existing Features
 
 | Feature | Notes | Screenshot |
 | --- | --- | --- |
-| Data Input Validation | The program validates user input by ensuring the data is exactly six comma-separated numbers before continuing. | ![screenshot](documentation/features/data-validation.png) |
-| API Update | Sales, surplus, and stock data are updated in the relevant Google Sheets worksheet using gspread functionality. | ![screenshot](documentation/features/api-update.png) |
-| Surplus Calculation | Calculates surplus by comparing the latest stock and sales data to identify potential waste or shortages. | ![screenshot](documentation/features/surplus-calculation.png) |
-| Last 5 Sales Entries | Retrieves the last five sales entries from the "sales" worksheet for calculating stock averages. | ![screenshot](documentation/features/latest-entries.png) |
-| Stock Calculation | Computes stock based on the last 5 sales entries, adding 10% to the average to ensure adequate future stock. | ![screenshot](documentation/features/stock-calculation.png) |
-| Sales Data Automation | Automates the entire process of retrieving, validating, and updating sales, surplus, and stock data in Google Sheets. | ![screenshot](documentation/features/sales-data.png) |
+| Welcome Screen | When the user accesses the quiz, a welcome message is displayed along with four options: Introduction, How to play, Start quiz, and Exit. The user is prompted to make a selection by entering a number from 1 to 4. Once the choice is made, the corresponding action will be triggered based on the user's input. | ![screenshot](documentation/features/welcome.png) |
+| Introduction | The user is presented with a brief introduction to the quiz, explaining its purpose. After the introduction, the user is asked if they would like to start the quiz. If the user enters "yes", the quiz begins. If the user enters "no", they are redirected back to the main menu. | ![screenshot](documentation/features/introduction.png) |
+| How to play | The user is provided with a brief description of how the quiz works, including how to answer questions and navigate through the quiz. After reading the instructions, the user is asked if they would like to proceed with playing the quiz. If the user enters "yes", the quiz will start. If the user enters "no", they will be returned to the main menu. | ![screenshot](documentation/features/how-to-play.png) |
+| Start quiz | When the user selects to start the quiz, a message appears saying "Starting the quiz...". The first question is displayed, along with four possible answers. The user can choose one of the options to proceed to the next question. | ![screenshot](documentation/features/start-quiz.png) |
+| User answer | The user is prompted to input their answer by entering one of the options: A, B, C, or D. After submitting their choice, the system checks the answer and proceeds to the next question or provides feedback based on the user's response. | ![screenshot](documentation/features/input-user-answer.png) |
+| Wrong answer | If the user answers incorrectly, the incorrect answer they selected is displayed, followed by the correct answer. This helps the user understand their mistake and learn the correct information before moving on to the next question. | ![screenshot](documentation/features/wrong-answer.png) |
+| Correct answer |If the user answers correctly, a message is displayed confirming the correct answer, such as "Correct! This city is the capital of [Country]." The user can then proceed to the next question. | ![screenshot](documentation/features/correct-answer.png) |
+| Score | During the quiz, the user’s score is displayed, showing how many questions they have answered correctly out of the total of 15. This provides the user with real-time feedback on their performance as they progress through the quiz. | ![screenshot](documentation/features/score.png) |
+| Quiz progress | The quiz progress is shown, indicating which question the user is currently on out of the total of 15 questions. This helps the user keep track of their progress throughout the quiz. | ![screenshot](documentation/features/quiz-progress.png) |
+| End quiz | Once the quiz is completed, a message is displayed stating that the quiz is finished, along with the user's final score. The user is then prompted with an input asking if they would like to play again. If the user enters "yes", the quiz restarts from the beginning. If the user enters "no", they are redirected to the main menu. | ![screenshot](documentation/features/end-quiz.png) |
+| Exit | If the user chooses "Exit", a message appears saying "Goodbye." | ![screenshot](documentation/features/exit.png) |
+
 
 ### Future Features
 
-⚠️ INSTRUCTIONS ⚠️
+- **Timer for Each Question**: Introduce a countdown timer for each question, adding a time-based challenge to increase the quiz's difficulty and excitement.
+- **Multiple Categories**: Expand the quiz with additional categories (e.g., Science, Literature, Pop Culture) so users can choose a specific topic for their quiz.
+- **Difficulty Levels**: Introduce multiple difficulty levels (Easy, Medium, Hard) to allow users to select their preferred challenge.
+- **User Accounts and Saving Progress**: Allow users to create accounts, save their quiz progress, and track their performance over time.
+- **Feedback System**: Add a feature for users to provide feedback on questions or suggest improvements, helping to enhance the quality of the quiz.
+- **Multilingual Support**: Implement multilingual support, enabling users to take the quiz in different languages based on their preference.
+- **Sound Effects**: Introduce sound effects for correct and incorrect answers, as well as background music, to make the quiz more interactive and engaging.
 
-Do you have additional ideas that you'd like to include on your project in the future? Fantastic, list them here! It's always great to have plans for future improvements. Consider adding any helpful links or notes to help remind you in the future, if you revisit the project in a couple years.
 
-A few examples are listed below to align with possible ways to improve on the sample walkthrough project, to give you some inspiration.
-
-⚠️ --- END ---⚠️
-
-- **User Authentication and Role Management**: Implement a login system with roles (e.g., admin, employee) to restrict data access based on user roles.
-- **Data Visualization**: Add charts and graphs to visually represent sales trends, stock levels, and surplus/waste over time.
-- **Real-time Data Sync**: Integrate real-time syncing of sales and stock data across multiple devices to support live updates.
-- **Automated Restocking Alerts**: Notify users when stock levels fall below a certain threshold, prompting restock orders.
-- **Predictive Analytics**: Use historical sales data to predict future demand, helping to optimize stock levels and minimize waste.
-- **Multilingual Support**: Add support for multiple languages to make the app more accessible to a global audience.
-- **Mobile App Integration**: Develop a mobile version of the app for easier data input and stock management on the go.
-- **Reporting and Exporting**: Generate and export detailed reports in PDF or CSV format for deeper analysis of sales, surplus, and stock data.
-- **Inventory Management**: Include functionality to track supplier information, order inventory, and manage costs directly within the app.
-- **Customer Feedback Integration**: Allow customers to leave feedback on sold items, giving insight into sales performance and customer satisfaction.
-- **Customizable Dashboards**: Provide users with the ability to customize their dashboard, selecting which data points and metrics they want to monitor.
-- **Historical Data Comparison**: Implement functionality to compare current sales and stock data with data from the same period in previous years.
-- **Seasonal Adjustment Recommendations**: Analyze sales patterns and suggest stock adjustments for holidays or other seasonal trends.
-- **API Integration**: Provide an API for integrating with other third-party services, such as point-of-sale systems or accounting software.
 
 ## Tools & Technologies
 
