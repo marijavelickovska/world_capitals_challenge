@@ -137,7 +137,7 @@ I've used [Lucidchart](https://www.lucidchart.com/pages/examples/flowchart-maker
 
 #### Flowchart
 
-To follow best practice, a flowchart was created for the app's logic, and mapped out using a free version of [Lucidchart](https://www.lucidchart.com/pages/ER-diagram-symbols-and-meaning) and/or [Draw.io](https://www.draw.io). The flowchart below represents the main process of this Python program. It shows the entire cycle of the application.
+To follow best practice, a flowchart was created for the app's logic, and mapped out using a free version of [Lucidchart](https://www.lucidchart.com/pages/ER-diagram-symbols-and-meaning) and [Draw.io](https://www.draw.io). The flowchart below represents the main process of this Python program. It shows the entire cycle of the application.
 
 ![screenshot](documentation/flowchart.png)
 
@@ -149,57 +149,55 @@ The diagram was created using [`Mermaid flowchart`](https://mermaid.live), a too
 
 #### Classes & Functions
 
-⚠️ INSTRUCTIONS ⚠️
-
-Use this space to explain your Python classes (if applicable) and functions. Examples below for inspiration, although Love Sandwiches doesn't use this example `Person` class/object.
-
-⚠️ --- END --- ⚠️
-
-The program uses classes as a blueprint for the project's object-oriented programming (OOP). This allows for the object to be reusable and callable where necessary.
-
-```python
-class Person:
-    """ Insert docstring comments here """
-    def __init__(self, name, age, health, inventory):
-        self.name = name
-        self.age = age
-        self.health = health
-        self.inventory = inventory
-```
-
 The primary functions used on this application are:
 
-- `get_sales_data()`
-    - Get sales figures input from the user.
-- `validate_data()`
-    - Converts all string values into integers.
-- `update_worksheet()`
-    - Update the relevant worksheet with the data provided.
-- `calculate_surplus_data()`
-    - Compare sales with stock and calculate the surplus for each item type.
-- `get_last_5_entries_sales()`
-    - Collects columns of data from sales worksheet.
-- `calculate_stock_data()`
-    -  Calculate the average stock for each item type, adding 10%.
-- `main()`
-    - Run all program functions.
+- `clear()`
+    - Clears the terminal screen.
+
+- `show_welcome()`
+    - Displays welcome message and the main menu with game options.
+
+- `show_introduction()`
+    - Displays the game introduction screen.
+
+- `show_how_to_play()`
+    - Displays instructions on how to play the quiz.
+
+- `exit()`
+    - Displays goodbye message and exits the program.
+
+- `validate_yes_no_input()`
+    - Checks if user input is a valid "yes" or "no" response.
+
+- `validate_choice_input()`
+    - Checks if user input is one of the valid answer choices (A, B, C, or D).
+
+- `handle_yes_no_response()`
+    - Handles the flow based on the user’s yes or no input.
+
+- `ask_to_play_quiz()`
+    - Asks the user if they want to start the quiz.
+
+- `check_if_correct()`
+    - Compares user answer with the correct answer.
+
+- `end_quiz()`
+    - Displays final score and asks if the user wants to play again.
+
+- `start_quiz()`
+    - Starts the quiz and iterates through all questions.
+
+- `main_menu()`
+    - Displays the main menu and handles user selection..
 
 #### Imports
 
-⚠️ INSTRUCTIONS ⚠️
-
-Use this space to explain your Python imports and packages, with some common examples found below.
-
-⚠️ --- END --- ⚠️
-
 I've used the following Python packages and external imports.
 
-- `gspread`: used with the Google Sheets API
-- `google.oauth2.service_account`: used for the Google Sheets API credentials
 - `time`: used for adding time delays
-- `os`: used for adding a `clear()` function
-- `colorama`: used for including color in the terminal
 - `random`: used to get a random choice from a list
+- `colorama`: used for including color in the terminal
+
 
 ## Agile Development Process
 
