@@ -44,55 +44,23 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 
 ## Defensive Programming
 
-⚠️ INSTRUCTIONS ⚠️
-
-Defensive programming (defensive design) is extremely important! When building projects that accept user inputs or forms, you should always test the level of security for each form field. Examples of this could include (but not limited to):
-
-All Projects:
-
-- Users cannot submit an empty form (add the `required` attribute)
-- Users must enter valid field types (ensure the correct input `type=""` is used)
-- Users cannot brute-force a URL to navigate to a restricted pages
-
-Python Projects:
-
-- Users cannot perform CRUD functionality if not authenticated (if login functionality exists)
-- User-A should not be able to manipulate data belonging to User-B, or vice versa
-- Non-Authenticated users should not be able to access pages that require authentication
-- Standard users should not be able to access pages intended for superusers/admins
-
-You'll want to test all functionality on your application, whether it's a standard form, or CRUD functionality, for data manipulation on a database. Try to access various pages on your site as different user types (User-A, User-B, guest user, admin, superuser). You should include any manual tests performed, and the expected results/outcome.
-
-Testing should be replicable (can someone else replicate the same outcome?). Ideally, tests cases should focus on each individual section of every page on the website. Each test case should be specific, objective, and step-wise replicable.
-
-Instead of adding a general overview saying that everything works fine, consider documenting tests on each element of the page (eg. button clicks, input box validation, navigation links, etc.) by testing them in their "happy flow", their "bad/exception flow", mentioning the expected and observed results, and drawing a parallel between them where applicable.
-
-Consider using the following format for manual test cases:
-
-- Expected Outcome / Test Performed / Result Received / Fixes Implemented
-
-- **Expected**: "Feature is expected to do X when the user does Y."
-- **Testing**: "Tested the feature by doing Y."
-- (either) **Result**: "The feature behaved as expected, and it did Y."
-- (or) **Result**: "The feature did not respond to A, B, or C."
-- **Fix**: "I did Z to the code because something was missing."
-
-Use the table below as a basic start, and expand on it using the logic above.
-
-⚠️ --- END --- ⚠️
-
 Defensive programming was manually tested with the below user acceptance testing:
 
 | Feature | Expectation | Test | Result | Screenshot |
 | --- | --- | --- | --- | --- |
-| Sales Input | Feature is expected to allow users to input the number of each sandwich type sold during the day. | Entered sales data for various sandwich types using a mock dataset. | Sales data was successfully recorded and saved. | ![screenshot](documentation/defensive/sales-input.png) |
-| | Feature is expected to minimize typing for quick input. | Used pre-defined options for sandwich types to streamline data entry. | Input process was fast and required minimal typing. | ![screenshot](documentation/defensive/quick-input.png) |
-| Sales Breakdown | Feature is expected to show a breakdown of total sandwich sales by type. | Reviewed the breakdown output after entering sales data. | Breakdown displayed correctly, with sales totals for each sandwich type. | ![screenshot](documentation/defensive/sales-breakdown.png) |
-| | Feature is expected to categorize sandwiches by type (e.g., vegetarian, meat, cheese). | Checked the categorization of sandwiches in the breakdown. | Sandwiches were correctly categorized by dietary type. | ![screenshot](documentation/defensive/categorization.png) |
-| Total Sales | Feature is expected to calculate the total sandwiches sold for the day. | Verified the total sales calculation with a known dataset. | Total sales calculation matched the expected result. | ![screenshot](documentation/defensive/total-sales.png) |
-| Trends | Feature is expected to display a trend of sandwich sales over time (e.g., week, month). | Input sales data for a week and reviewed the trend output. | Trends were displayed accurately for the selected timeframe. | ![screenshot](documentation/defensive/sales-trend.png) |
-| Suggestions | Feature is expected to suggest estimated sales for the next day based on past sales data. | Input past sales data and reviewed next-day suggestions. | Suggestions were reasonable and based on past sales trends. | ![screenshot](documentation/defensive/sales-suggestions.png) |
-| Usability | Feature is expected to be intuitive and easy to use. | Used the app without referring to documentation or prior knowledge. | App was intuitive and user-friendly for sales tracking. | ![screenshot](documentation/defensive/usability.png) |
+| Main menu | Feature is expected to display a welcome message with a main menu offering 4 options and an input for user selection.  | Check if the main menu and input field are displayed correctly. | Works as expected – the welcome message, menu options, and input appear properly. | ![screenshot](documentation/defensive/main-menu.png) |
+| Input 1/4 | Feature is expected to allow user to enter a number from 1 to 4 to select an option from main menu, and show an error for invalid input. | Enter valid (1–4) and invalid (other number, letters, symbols, empty input) values. | Works as expected – valid input proceeds correctly, invalid input shows error and re-prompts. | ![screenshot](documentation/defensive/input-1-4.png) |
+| Introduction | Feature is expected to display a short quiz introduction and a yes/no input to start the quiz or return to main menu.  | Check if the introduction text and yes/no input appear after selecting the quiz option. | Works as expected – introduction and input are shown. | ![screenshot](documentation/defensive/introduction.png) | 
+| How to play | Feature is expected to display quiz instructions and provide a yes/no input to start the quiz or return to main menu.  | Select the "How to play" option and check if instructions and input appear correctly. | Works as expected – instructions and yes/no input are shown. | ![screenshot](documentation/defensive/how-to-play.png) |
+| Input yes/no | Feature is expected to accept only "yes" or "no" and reject any other input with an error message and re-prompt. | Enter valid and invalid inputs and check if validation works. | Works as expected – only "yes" or "no" are accepted; others show error and re-prompt. | ![screenshot](documentation/defensive/input-yes-no.png) |
+| Start quiz | Feature is expected to show a start message, display a random question with 4 options, and provide an input for answers. | Start the quiz and verify that a random question and options appear with input for the answer. | Works as expected – question, answers, and input are displayed correctly. | ![screenshot](documentation/defensive/start-quiz.png) |
+| Input A, B, C, D  | Feature is expected to accept only A, B, C, or D as valid input, and show an error for any other input with re-prompt. | Enter valid (A–D) and invalid (other letters, numbers, symbols, empty) inputs. | Works as expected – valid input proceeds, invalid input shows error and re-prompts. | ![screenshot](documentation/defensive/input-user-answer.png) |
+| Quiz progress | Feature is expected to show the current question number out of 15 and increment it as the quiz progresses. | Check that the progress (e.g. "Question 4/15") updates with each new question. | Works as expected – progress increases correctly with each question. | ![screenshot](documentation/defensive/quiz-progress.png) |
+| Correct answer message  | Feature is expected to display a confirmation message for a correct answer and confirm that the selected city is the capital. | Answer correctly and verify that the correct answer message is shown. | Works as expected – confirmation and capital city validation are displayed correctly. | ![screenshot](documentation/defensive/correct-answer.png) |
+| Incorrect answer message  | Feature is expected to display the user's answer and show the correct one with a note that the answer was incorrect. | Answer incorrectly and check if the incorrect answer message shows the user's answer and correct answer. | Works as expected – the wrong answer message is shown along with the correct answer. | ![screenshot](documentation/defensive/incorrect-answer.png) |
+| Score | Feature is expected to display and update the score with each correct answer throughout the quiz. | Track score throughout the quiz to ensure it increases only on correct answers. | Works as expected – score is accurate and updates correctly. | ![screenshot](documentation/defensive/score.png) |
+| End quiz | Feature is expected to show a completion message, display the final score, and offer a yes/no input to restart or exit. | Finish the quiz and check if final message, score, and input appear. | Works as expected – final results and replay option are shown. | ![screenshot](documentation/defensive/end-quiz.png) |
+| Exit  | Feature is expected to display a goodbye message when the user chooses to exit. | Choose the exit option and verify that a goodbye message appears. | Works as expected – exit message is displayed correctly. | ![screenshot](documentation/defensive/exit.png) |
 
 ## User Story Testing
 
