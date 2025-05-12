@@ -10,10 +10,10 @@
 
 I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validate all of my Python files.
 
-| Directory | File | URL | Screenshot | Notes |
-| --- | --- | --- | --- | --- |
-|  | [dataQuiz.py](https://github.com/marijavelickovska/world_capitals_challenge/blob/main/dataQuiz.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/world_capitals_challenge/main/dataQuiz.py) | ![screenshot](documentation/validation/py--dataQuiz.png) | Notes (if applicable) |
-|  | [run.py](https://github.com/marijavelickovska/world_capitals_challenge/blob/main/run.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/world_capitals_challenge/main/run.py) | ![screenshot](documentation/validation/py--run.png) | Notes (if applicable) |
+| Directory | File | URL | Screenshot | 
+| --- | --- | --- | --- | 
+|  | [dataQuiz.py](https://github.com/marijavelickovska/world_capitals_challenge/blob/main/dataQuiz.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/world_capitals_challenge/main/dataQuiz.py) | ![screenshot](documentation/validation/py--dataQuiz.png) | 
+|  | [run.py](https://github.com/marijavelickovska/world_capitals_challenge/blob/main/run.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/world_capitals_challenge/main/run.py) | ![screenshot](documentation/validation/py--run.png) | 
 
 
 ## Responsiveness
@@ -32,7 +32,7 @@ I've tested my deployed project on multiple browsers to check for compatibility 
 
 | Chrome | Firefox | Edge | Notes |
 | --- | --- | --- | --- |
-| ![screenshot](documentation/browsers/chrome-terminal.png) | ![screenshot](documentation/browsers/firefox-terminal.png) | ![screenshot](documentation/browsers/edge-terminal.png) | Chrome: work as expected. Firefox: emojis get cut-off. Safari: some limitations. |
+| ![screenshot](documentation/browsers/chrome-terminal.png) | ![screenshot](documentation/browsers/firefox-terminal.png) | ![screenshot](documentation/browsers/edge-terminal.png) | Chrome and Edge: works as expected. Firefox: emojis get cut-off. |
 
 ## Lighthouse Audit
 
