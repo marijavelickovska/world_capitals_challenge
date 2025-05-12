@@ -6,7 +6,7 @@ from colorama import Fore, Back, Style
 colorama.init(autoreset=True)
 
 
-quiz_questions = random.sample(dataQuiz.quiz_questions, 15)
+
 score = 0
 
 
@@ -155,7 +155,7 @@ def check_if_correct(
         score += 1
         is_correct = "✅"
         print(
-            f"{is_correct} Correct: {correct_text} is the capital of"
+            f"{is_correct} Correct: {correct_text} is the capital of "
             f"{country}"
         )
     else:
@@ -179,7 +179,7 @@ def end_quiz():
     print()
     print("-"*40)
     print(
-        f"{Style.BRIGHT} Your final score is"
+        f"{Style.BRIGHT} Your final score is "
         f"{Fore.YELLOW}{score}{Fore.WHITE} / {Fore.GREEN}15"
     )
     print("-"*40)
@@ -206,6 +206,7 @@ def start_quiz():
     """
     print(f"{Fore.GREEN}\nStarting the quiz...\n")
     time.sleep(1)
+    quiz_questions = random.sample(dataQuiz.quiz_questions, 15)
     index = 0
     while index < len(quiz_questions):
         question = quiz_questions[index]
