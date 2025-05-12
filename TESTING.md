@@ -87,8 +87,6 @@ All previously closed/fixed bugs can be tracked [here](https://www.github.com/ma
 
 ### Unfixed Bugs
 
-⚠️ INSTRUCTIONS ⚠️
-
 [![GitHub issues](https://img.shields.io/github/issues/marijavelickovska/world_capitals_challenge)](https://www.github.com/marijavelickovska/world_capitals_challenge/issues)
 
 Any remaining open issues can be tracked [here](https://www.github.com/marijavelickovska/world_capitals_challenge/issues).
