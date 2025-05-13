@@ -1,6 +1,6 @@
 import time
 import random
-import sys # added to enable the use of sys.exit()
+import sys
 import dataQuiz
 import colorama
 from colorama import Fore, Back, Style
@@ -161,7 +161,7 @@ def check_if_correct(
         )
     else:
         print(
-            f"{Fore.RED}Your Answer: {Fore.RESET} {user_answer}.{user_text}"
+            f"{Fore.RED}Your Answer: {Fore.RESET} {user_answer}.{user_text} "
             f"{is_correct}"
         )
         print(
