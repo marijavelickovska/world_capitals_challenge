@@ -157,16 +157,16 @@ def check_if_correct(
         is_correct = "✅"
         print(
             f"{Fore.GREEN}{is_correct} Correct: {Fore.RESET} {correct_text} "
-            f"is the capital of {country}"
+            f"is the capital of {country}."
         )
     else:
         print(
-            f"{Fore.RED}Your Answer: {Fore.RESET} {user_answer}.{user_text} "
+            f"{Fore.RED}Your Answer: {Fore.RESET} {user_answer}. {user_text} "
             f"{is_correct}"
         )
         print(
             f"{Fore.GREEN}Correct Answer: {Fore.RESET} {correct_text} "
-            f"is the capital of {country}"
+            f"is the capital of {country}."
         )
     print(f"{Style.BRIGHT}Your score is: {score}\n")
 
