@@ -211,10 +211,14 @@ def start_quiz():
     At the end, checks if the index is equal to the
     total number of quiz questions and, if so, calls the end_quiz function.
     """
-    print(f"{Fore.GREEN}\nStarting the quiz...\n")
-    time.sleep(1)
+    global score
+    score = 0
     quiz_questions = random.sample(dataQuiz.quiz_questions, 15)
     index = 0
+
+    print(f"{Fore.GREEN}\nStarting the quiz...\n")
+    time.sleep(1)
+    
     while index < len(quiz_questions):
         question = quiz_questions[index]
         print(f"Question {index + 1}/15")
