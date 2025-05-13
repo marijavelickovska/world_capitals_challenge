@@ -218,7 +218,7 @@ def start_quiz():
 
     print(f"{Fore.GREEN}\nStarting the quiz...\n")
     time.sleep(1)
-    
+
     while index < len(quiz_questions):
         question = quiz_questions[index]
         print(f"Question {index + 1}/15")
