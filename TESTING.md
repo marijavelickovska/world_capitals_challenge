@@ -60,7 +60,7 @@ Defensive programming was manually tested with the below user acceptance testing
 | Incorrect answer message  | Feature is expected to display the user's answer and show the correct one with a note that the answer was incorrect. | Answer incorrectly and check if the incorrect answer message shows the user's answer and correct answer. | Works as expected – the wrong answer message is shown along with the correct answer. | ![screenshot](documentation/defensive/incorrect-answer.png) |
 | Score | Feature is expected to display and update the score with each correct answer throughout the quiz. | Track score throughout the quiz to ensure it increases only on correct answers. | Works as expected – score is accurate and updates correctly. | ![screenshot](documentation/defensive/score.png) |
 | End quiz | Feature is expected to show a completion message, display the final score, and offer a yes/no input to restart or exit. | Finish the quiz and check if final message, score, and input appear. | Works as expected – final results and replay option are shown. | ![screenshot](documentation/defensive/end-quiz.png) |
-| Exit  | Feature is expected to display a goodbye message when the user chooses to exit. | Choose the exit option and verify that a goodbye message appears. | Works as expected – exit message is displayed correctly. | ![screenshot](documentation/defensive/exit.png) |
+| Exit | Feature is expected to display a goodbye message and terminate the program when the user chooses to exit. | Choose the exit option and verify that a goodbye message appears and the program stops running. | Works as expected – goodbye message is displayed and the program exits correctly. | ![screenshot](documentation/defensive/exit.png) |
 
 ## User Story Testing
 

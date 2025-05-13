@@ -1,5 +1,6 @@
 import time
 import random
+import sys # added to enable the use of sys.exit()
 import dataQuiz
 import colorama
 from colorama import Fore, Back, Style
@@ -58,12 +59,13 @@ def show_how_to_play():
     ask_to_play_quiz()
 
 
-def exit():
+def exit_program():
     clear()
     print("-"*40)
     print(f"{Fore.YELLOW}Goodbye!")
     print("-"*40)
     print()
+    sys.exit()
 
 
 def validate_yes_no_input(yes_no_answer):
@@ -163,7 +165,7 @@ def check_if_correct(
             f"{is_correct}"
         )
         print(
-            f"{Fore.GREEN}Correct Answer: {Fore.RESET} {correct_text}"
+            f"{Fore.GREEN}Correct Answer: {Fore.RESET} {correct_text} "
             f"is the capital of {country}"
         )
     print(f"{Style.BRIGHT}Your score is: {score}\n")
@@ -273,8 +275,7 @@ def main_menu():
             elif choice == "3":
                 start_quiz()
             elif choice == "4":
-                exit()
-                return False
+                exit_program()
             else:
                 print("Invalid choice. Please enter a number from 1 to 4.\n")
 

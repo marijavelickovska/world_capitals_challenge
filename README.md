@@ -163,7 +163,7 @@ The primary functions used on this application are:
 - `show_how_to_play()`
     - Displays instructions on how to play the quiz.
 
-- `exit()`
+- `exit_program()`
     - Displays goodbye message and exits the program.
 
 - `validate_yes_no_input()`
@@ -197,6 +197,7 @@ I've used the following Python packages and external imports.
 - `time`: used for adding time delays
 - `random`: used to get a random choice from a list
 - `colorama`: used for including color in the terminal
+- `sys`: added to allow use of sys.exit()
 
 
 ## Agile Development Process
