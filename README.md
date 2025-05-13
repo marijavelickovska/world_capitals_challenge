@@ -335,7 +335,8 @@ There are no remaining major differences between the local version when compared
 | [Real Python](https://realpython.com/python-quiz-application) | Inspiration for a quiz app |
 | [Python Tutor](https://pythontutor.com) | Additional Python help |
 | [Colorama](https://www.youtube.com/watch?v=u51Zjlnui4Y) | Adding color in Python |
-| [StackOverflow](https://stackoverflow.com/a/50921841) | Clear screen in Python  ([link](https://stackoverflow.com/a/50921841)) |  
+| [StackOverflow](https://stackoverflow.com/a/50921841) | Clear screen in Python  ([link](https://stackoverflow.com/a/50921841)) |
+| [FreeCodeCamp](https://www.freecodecamp.org) | Implementation of the sys.exit() function.  ([link](https://www.freecodecamp.org/news/python-exit-how-to-use-an-exit-function-in-python-to-stop-a-program/)) | 
 | [ChatGPT](https://chatgpt.com) | Help with code logic and explanations |
 
 ### Media
